@@ -1,0 +1,109 @@
+@charset "utf-8";
+*{
+	padding: 0;
+	margin: 0;
+}
+
+.head{
+	display: block;
+	width: 100%;
+}
+.middle{
+	display: block;
+	/*width: 100%;*/
+	position: absolute;
+	top:90px;	
+}
+.icon{
+	display: inline-block;
+	width:50px;
+	height:50px;
+	display:flex;
+	margin:40px ;
+	align-items:center; 
+	justify-content:center;
+	float: left;
+}
+.title{
+	display: inline-block;
+	float: left;
+	height:130px;
+	line-height: 130px;
+	color: orangered;
+	letter-spacing: 10px;
+	
+}
+.submit{
+	display: inline-block;
+	float: left;
+	/*padding: 20px auto;*/
+}
+
+
+#left{
+	width: 450px;
+	height:600px;
+	display: inline-block;
+	float: left;
+	margin-top: 40px;
+}
+#right{
+	width: 400px;
+	height:600px;
+	display: inline-block;
+	float: left;
+	margin-top: 40px;
+	
+}
+.protocol{
+	height: 280px;
+	width: 500px;
+	background-color: white;
+	border: 1px solid darkgrey;
+	display: inline-block;
+	float: left;
+	overflow: auto;
+	margin-bottom: 20px;
+}
+.int{
+	display: block;
+}
+.int2{
+	color: orangered;
+	margin-left: 95px;
+}
+.input{
+	height:40px;
+	width: 300px;
+	font-size: 20px;
+	line-height: 40px;
+	margin-bottom: 15px;
+	padding-left: 10px;
+}
+.input1{
+	height:120px;
+	width: 300px;
+	font-size: 20px;
+	line-height: 40px;
+	margin-bottom: 15px;
+	padding-left: 10px;
+	
+}
+.input2{
+	height:20px;
+	font-size: 12px;
+	line-height: 20px;
+	margin-bottom: 15px;
+}
+#send{
+	width:310px;
+	height: 40px;
+	/*display: inline-block;*/
+	border:hidden;
+	color: white;
+	font-size: 20px;
+	text-align: center;
+	margin: 10px auto;
+	background-color: orange;
+	margin-left: 95px;
+}

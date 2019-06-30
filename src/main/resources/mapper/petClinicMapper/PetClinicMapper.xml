@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nenu.ossas.mapper.petClinicMapper.PetClinicMapper">
+
+    <select id="queryPetClinicByCode" resultType="com.nenu.ossas.entity.petClinicEntity.PetClinic">
+        select * from t_petclinic where petClinicCode = #{petClinicCode} limit 1
+    </select>
+
+    <select id="queryPetClinic" resultType="com.nenu.ossas.entity.petClinicEntity.PetClinic">
+        select * from t_petclinic
+        where name like CONCAT('%','${petClinic.name}','%')
+            or petClinicAddress like CONCAT('%','${petClinic.petClinicAddress}','%')
+            or telephone like CONCAT('%','${petClinic.telephone}','%')
+    </select>
+
+    <insert id="addPetClinic">
+        insert into t_petclinic(petClinicCode,name,petClinicAddress,telephone,introduction,img,status)
+        values (#{petClinic.petClinicCode},#{petClinic.name},#{petClinic.petClinicAddress},#{petClinic.telephone},#{petClinic.introduction},#{petClinic.img},0)
+    </insert>
+
+    <update id="updatePetClinic">
+        update t_petclinic
+        set petClinicCode = #{petClinic.petClinicCode},
+            name = #{petClinic.name},
+            petClinicAddress = #{petClinic.petClinicAddress},
+            telephone = #{petClinic.telephone},
+            introduction = #{petClinic.introduction},
+            img = #{petClinic.img}
+        where id = #{petClinic.id}
+    </update>
+
+    <delete id="delPetClinic">
+        delete from t_petclinic where petClinicCode = #{petClinic.petClinicCode}
+    </delete>
+
+    <update id="pass">
+        update t_petclinic set status = #{petClinic.status} where id = #{petClinic.id}
+    </update>
+</mapper>

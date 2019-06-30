@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nenu.ossas.mapper.billMapper.BillMapper">
+
+    <insert id="addBill">
+        insert into t_bill(amount,donorName,donorTel,donorEmail,message)
+        values (#{bill.amount},#{bill.donorName},#{bill.donorTel},#{bill.donorEmail},#{bill.message})
+    </insert>
+
+    <select id="queryBill" resultType="com.nenu.ossas.entity.bill.Bill">
+        select * from t_bill
+        where amount like CONCAT('%','${bill.amount}','%')
+        and donorName like CONCAT('%','${bill.donorName}','%')
+        and donorTel like CONCAT('%','${bill.donorTel}','%')
+        and donorEmail like CONCAT('%','${bill.donorEmail}','%')
+        and message like  CONCAT('%','${bill.message}','%')
+    </select>
+
+<!--
+
+-->
+
+    <delete id="delBill">
+        delete from t_bill where id = #{bill.id}
+    </delete>
+
+    <update id="updateBill">
+        update t_bill
+        set amount = #{bill.amount},
+            donorName = #{bill.donorName},
+            donorTel = #{bill.donorTel},
+            donorEmail = #{bill.donorEmail},
+            message = #{bill.message}
+        where id = #{bill.id}
+    </update>
+</mapper>

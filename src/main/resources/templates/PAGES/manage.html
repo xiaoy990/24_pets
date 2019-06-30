@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+    	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<name></name>
+		
+	    <link rel="stylesheet" type="text/css" href="CSS/manage.css">
+		<script src="JS/jquery-1.11.2.js"></script>
+		
+	</head>
+	<body>
+		<div class="container">
+			<div id="head">
+				<span id="title1">后台管理系统</span>
+				<span id="title2">————欢迎您！</span>
+				<span><a href="/toHome"><button>返回</button></a> </span>
+			</div>
+			<div id="middle">
+				<div id="nav">
+					<ul>
+						<a href="/manageAm" ><li id="choice1">寻宠管理</li></a>
+
+						<a href="/manageOn"><li id="choice2">寻主管理</li></a>
+						<a href="/managePC" ><li id="choice3">诊所管理</li></a>
+						<a href="/manageAS" ><li id="choice4">救助站管理</li></a>
+						<a href="/manageVt" ><li id="choice5">志愿者管理</li></a>
+						<a href="/shelterApply" ><li id="choice6">救助站申请</li></a>
+						<a href="/petClinicApply" ><li id="choice7">诊所申请</li></a>
+						
+					</ul>
+				</div>
+				<div id="show">
+					<div id="search">
+						<input type="text" placeholder="请输入关键字"/>
+						<button type="button">搜索</button>
+					</div>
+					<br><br>
+
+
+					<div >
+						<table style="table-layout:fixed;" >
+							<tr th:each="list,listStat:${list}">
+								<td ><img th:src="${list.img}" style="float: left;width: 150px;height: 100px;"></td>
+								<td th:text="${list.name}" style="width:130px;padding-left: 10px;padding-right:10px;word-wrap:break-word;word-break:break-all;"></td>
+								<td th:text="${list.introduction}" style="width:290px;padding-right:10px;word-wrap:break-word;word-break:break-all;"></td>
+								<td th:text="${list.telephone}" style="width:250px;word-wrap:break-word;word-break:break-all;"></td>
+								<td th:each="button,bState:${buttons}"><a href="" th:href="${button.href}+${list.id}"><button th:text="${button.value}"></button></a></td>
+							</tr>
+						</table>
+					</div>
+				</div>	
+			</div>
+		</div>
+				
+		<!--<script type="text/javascript" src="JS/fy.js"></script>-->
+		<!--<script>-->
+			<!--const pagePagination = new SimplePagination(5);-->
+			<!--pagePagination.init({-->
+				<!--container: '.box',-->
+				<!--maxShowBtnCount: 3,-->
+				<!--onPageChange: state => {-->
+					<!--console.log('pagination change:', state.pageNumber);-->
+				<!--}-->
+			<!--});-->
+			<!--document.getElementById('page-go').addEventListener('submit', e => {-->
+				<!--e.preventDefault();-->
+				<!--pagePagination.gotoPage(+document.getElementById('page-num').value)-->
+			<!--})-->
+		<!--</script>-->
+	<!--</body>-->
+
+	<!--<script>-->
+		<!--$("#choice1").click(function(){-->
+		  	<!--$("#table1").show();-->
+		  	<!--$("#table2").hide();-->
+		  	<!--$("#table3").hide();-->
+		  	<!--$("#table4").hide();-->
+		  	<!--$("#table5").hide();-->
+		  	<!--$(".tishi").hide();-->
+		  	<!--$("#choice1").css("background-color","#cc6600");-->
+		  	<!--$("#choice2").css("background-color","#eb7e17");-->
+			<!--$("#choice3").css("background-color","#eb7e17");-->
+			<!--$("#choice4").css("background-color","#eb7e17");-->
+			<!--$("#choice5").css("background-color","#eb7e17");-->
+		<!--});-->
+		<!--$("#choice2").click(function(){-->
+		  	<!--$("#table1").hide();-->
+		  	<!--$("#table2").show();-->
+		  	<!--$("#table3").hide();-->
+		  	<!--$("#table4").hide();-->
+		  	<!--$("#table5").hide();-->
+		  	<!--$(".tishi").hide();-->
+		  	<!--$("#choice1").css("background-color","#eb7e17");-->
+		  	<!--$("#choice2").css("background-color","#cc6600");-->
+			<!--$("#choice3").css("background-color","#eb7e17");-->
+			<!--$("#choice4").css("background-color","#eb7e17");-->
+			<!--$("#choice5").css("background-color","#eb7e17");-->
+		<!--});-->
+		<!--$("#choice3").click(function(){-->
+		  	<!--$("#table1").hide();-->
+		  	<!--$("#table2").hide();-->
+		  	<!--$("#table3").show();-->
+		  	<!--$("#table4").hide();-->
+		  	<!--$("#table5").hide();-->
+		  	<!--$(".tishi").hide();-->
+		  	<!--$("#choice1").css("background-color","#eb7e17");-->
+		  	<!--$("#choice2").css("background-color","#eb7e17");-->
+			<!--$("#choice3").css("background-color","#cc6600");-->
+			<!--$("#choice4").css("background-color","#eb7e17");-->
+			<!--$("#choice5").css("background-color","#eb7e17");-->
+		<!--});-->
+		<!--$("#choice4").click(function(){-->
+		  	<!--$("#table1").hide();-->
+		  	<!--$("#table2").hide();-->
+		  	<!--$("#table3").hide();-->
+		  	<!--$("#table4").show();-->
+		  	<!--$("#table5").hide();-->
+		  	<!--$(".tishi").hide();-->
+		  	<!--$("#choice1").css("background-color","#eb7e17");-->
+		  	<!--$("#choice2").css("background-color","#eb7e17");-->
+			<!--$("#choice3").css("background-color","#eb7e17");-->
+			<!--$("#choice4").css("background-color","#cc6600");-->
+			<!--$("#choice5").css("background-color","#eb7e17");-->
+		<!--});-->
+		<!--$("#choice5").click(function(){-->
+		  	<!--$("#table1").hide();-->
+		  	<!--$("#table2").hide();-->
+		  	<!--$("#table3").hide();-->
+		  	<!--$("#table4").hide();-->
+		  	<!--$("#table5").show();-->
+		  	<!--$(".tishi").hide();-->
+		  	<!--$("#choice1").css("background-color","#eb7e17");-->
+		  	<!--$("#choice2").css("background-color","#eb7e17");-->
+			<!--$("#choice3").css("background-color","#eb7e17");-->
+			<!--$("#choice4").css("background-color","#eb7e17");-->
+			<!--$("#choice5").css("background-color","#cc6600");-->
+		<!--});-->
+		<!--$("#show").click(function(){-->
+		  	<!--$("p").show();-->
+		<!--});-->
+	<!---->
+	<!--</script>-->
+	</body>
+</html>

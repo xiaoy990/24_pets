@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nenu.ossas.mapper.animal.OwnerMapper">
+    <resultMap type="com.nenu.ossas.entity.animal.Animal" id="OwnerMapper">
+        <result property="id" jdbcType="INTEGER" column="id"/>
+        <result property="name" jdbcType="VARCHAR" column="name"/>
+        <result property="sex" jdbcType="VARCHAR" column="sex"/>
+        <result property="age" jdbcType="INTEGER" column="age"/>
+        <result property="breed" jdbcType="VARCHAR" column="breed"/>
+        <result property="color" jdbcType="VARCHAR" column="color"/>
+        <result property="img" jdbcType="VARCHAR" column="img"/>
+        <result property="vaccine_yon" jdbcType="INTEGER" column="vaccine_yon"/>
+        <result property="sterilization_yon" jdbcType="INTEGER" column="sterilization_yon"/>
+        <result property="animal_character" jdbcType="VARCHAR" column="animal_character"/>
+        <result property="location" jdbcType="VARCHAR" column="location"/>
+        <result property="hobby" jdbcType="VARCHAR" column="hobby"/>
+        <result property="weight" jdbcType="DOUBLE" column="weight"/>
+        <result property="telephone" jdbcType="BIGINT" column="telephone"/>
+    </resultMap>
+
+    <!--遍历动物信息-->
+    <select id="listAll" resultMap="OwnerMapper">
+        SELECT `name`,`sex`,`age`,`breed`,`color`,`img`,
+        `vaccine_yon`,`sterilization_yon`,`animal_character`,`location`,
+        `hobby`,`weight`,`telephone` FROM t_animal
+    </select>
+
+    <!--增加动物信息-->
+    <insert id="addAnimal">
+        INSERT INTO t_animal
+        VALUES (#{animal.id},#{animal.name},#{animal.sex},#{animal.age},#{animal.breed},
+        #{animal.color},#{animal.img},#{animal.vaccine_yon},#{animal.sterilization_yon},
+        #{animal.animal_character},#{animal.location},#{animal.hobby},#{animal.weight},#{animal.telephone})
+    </insert>
+
+    <!--删除动物信息-->
+    <delete id="delAnimal">
+        DELETE FROM t_animal
+        WHERE id = #{animal.id}
+    </delete>
+
+    <!--更新动物信息-->
+    <update id="updateAnimal">
+        UPDATE t_animal
+        SET `name` = #{animal.name},
+        `sex` = #{animal.sex},
+        `age` = #{animal.age},
+        `breed` = #{animal.breed},
+        `color` = #{animal.color},
+        `img` = #{animal.img},
+        `vaccine_yon` =#{animal.vaccine_yon},
+        `sterilization_yon` = #{animal.sterilization_yon},
+        `animal_character` = #{animal.animal_character},
+        `location` = #{animal.location},
+        `hobby` = #{animal.hobby},
+        `weight` = #{animal.weight}
+        `telephone` = #{animal.telephone}
+    </update>
+
+    <!--根据关键字查询动物信息-->
+    <select id="selectByKeyword">
+        SELECT * FROM t_animal
+        WHERE  `name` LIKE concat('%',#{keyWord},'%')
+        OR `sex` LIKE concat('%',#{keyWord},'%')
+        OR `age` LIKE concat('%',#{keyWord},'%')
+        OR `breed` LIKE concat('%',#{keyWord},'%')
+        OR `color` LIKE concat('%',#{keyWord},'%')
+        OR `vaccine_yon` LIKE concat('%',#{keyWord},'%')
+        OR `sterilization_yon` LIKE concat('%',#{keyWord},'%')
+        OR `animal_character` LIKE concat('%',#{keyWord},'%')
+        OR `location` LIKE concat('%',#{keyWord},'%')
+        OR `hobby` LIKE concat('%',#{keyWord},'%')
+        OR `weight` LIKE concat('%',#{keyWord},'%')
+    </select>
+</mapper>

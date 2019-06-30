@@ -1,0 +1,44 @@
+<?xml version="1.0"  encoding = "UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nenu.ossas.mapper.volunteer.VolunteerMapper">
+    <resultMap id="VolunteerMapper" type="com.nenu.ossas.entity.volunteer.Volunteer">
+        <result property="volunteering" jdbcType="VARCHAR" column="volunteering"/>
+        <result property="name" jdbcType="VARCHAR" column="name"/>
+        <result property="date" jdbcType="VARCHAR" column="date"/>
+        <result property="place" jdbcType="VARCHAR" column="place"/>
+        <result property="introduction" jdbcType="VARCHAR" column="introduction"/>
+        <result property="img" jdbcType="VARCHAR" column="img"/>
+    </resultMap>
+
+    <!--遍历所有志愿活动信息-->
+    <select id="listAllVolunteer" resultType="com.nenu.ossas.entity.volunteer.Volunteer">
+        select * from t_volunteer
+    </select>
+
+    <!--增加志愿活动信息-->
+    <insert id="addVolunteer">
+        insert into t_volunteer values (#{volunteering},#{name},#{date},#{place},#{introduction},#{img})
+    </insert>
+
+    <!--删除志愿活动信息-->
+    <delete id="delVolunteer">
+        delete from t_volunteer where volunteering = #{volunteering}
+    </delete>
+
+    <!--编辑志愿活动信息-->
+    <update id="updateVolunteer">
+        update t_volunteer set `volunteering` =#{volunteering},
+        `name` =#{name},`date` =#{date},`place` =#{place},`introduction` =#{introduction},`img` =#{img}
+    </update>
+
+    <!--根据关键字查找志愿活动信息-->
+    <select id="selectVolunteerByKeyword" resultType="com.nenu.ossas.entity.volunteer.Volunteer">
+        select `name`,`date`,`place`,`introduction` from t_volunteer
+        where `name` like concat('%',#{keyWord},'%')
+        or `date` like concat('%',#{keyword},'%')
+        or `place` like concat('%',#{keyword},'%')
+        or `introduction` like concat('%',#{keyword},'%')
+    </select>
+</mapper>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<name></name>
+	<!--<link rel="stylesheet" type="text/css" href="../CSS/index.css">-->
+	<link rel="stylesheet" type="text/css" href="CSS/log.css">
+
+	<!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+</head>
+<body>
+<div id="log">
+	<div id="content">
+		<div id="head">
+			<div id="logo"><img src="IMG/490db2cd82b136078e5e6cf755fd59b6.png"></div>
+
+			<div id="skip">
+				<a href="login.html"><button type="button" class="select" id="signin">登录</button></a>
+				<a href="logup.html"><button type="button" class="select" id="signup">注册</button></a>
+			</div>
+		</div>
+		<div id="information">
+			<form action="/login" method="post" id="loginForm" enctype="multipart/form-data">
+				<div class="int">
+					<i class="icon"></i>
+					<input type="text" name="username" id="user" class="input" placeholder="手机/邮箱/用户名"/>
+				</div>
+				<div class="int">
+					<i class="icon"></i>
+					<input type="password" name="password" id="pwd" class="input" placeholder="请输入密码"/>
+				</div>
+				<a href="#"><div class="forget">
+					忘记密码？
+				</div></a>
+				<div class="sub">
+					<button type="submit" id="send"  value="ajax_submit" onclick="formUpload()">登录</button>
+				</div>
+
+
+			</form>
+			<div id="otherway">
+				<div class="tishi">
+					使用合作账号登录
+				</div>
+				<div class="otherchoice">
+					<button type="button" id="QQ"><img src="IMG/1 (2).png"></button>
+					<button type="button" id="微信"><img src="IMG/1 (2).png"></button>
+					<button type="button" id="微博"><img src="IMG/1 (2).png"></button>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+<script>
+	function formUpload() {
+		$.ajax({
+			dataType: 'json',
+			url: "",
+			success: function (data) {
+				window.location.href = "home.html"
+			}
+		});
+	}
+</script>
+</html>

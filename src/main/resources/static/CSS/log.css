@@ -1,0 +1,145 @@
+@charset "utf-8";
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	background-image: url('../IMG/background4.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	/*background-color:rgba(0 0 0 0.7);*/
+	/*position: relative;*/
+}
+button{
+	cursor: pointer;
+}
+/*背景图设置遮罩层*/
+/*#content:after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    background-color: lemonchiffon;
+    opacity: 0.3;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+}*/
+
+
+
+#content{
+	/*position:absolute;*/
+	/*margin: 100px auto;*/
+	width:400px;
+	height: 500px;
+	margin: 100px auto;
+}
+
+#logo{
+	width:200px;
+	height: 50px;
+	display:flex;
+	/*margin-bottom: 30px;*/
+	margin:20px auto ;
+	align-items:center; 
+	justify-content:center;
+}
+/*登录注册切换按钮*/
+.select{
+	width:150px;
+	height: 40px;
+	display: inline-block;
+	border:hidden;
+	color: white;
+	font-size: 20px;
+	text-align: center;
+		
+}
+
+#skip{
+	margin-top: 50px;
+	/*border:3px solid black;*/
+	width: 400px;
+	height: 70px;
+	padding-left: 50px;
+}
+#signin{
+	background-color: orange;
+	margin-right: 0;
+}
+#signup{
+	background-color: orangered;
+	margin-left: 0;
+}
+
+
+
+
+#information{
+	padding-left: 50px;
+}
+.int{
+	width:280px;
+	height:60px;
+	position: relative;
+}
+.forget{
+	width:280px;
+	height:30px;
+	text-align: right;
+	
+}
+a{
+	text-decoration: none;
+	color: white;
+}
+.sub{
+	width:310px;
+	height:60px;
+}
+ .int .icon{
+    background:url('../IMG/1 (2).png') no-repeat;
+    width: 20px; 
+    height: 20px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+} 
+.int .input{
+    padding-left: 30px;
+    height: 30px;
+    width: 280px;
+}
+
+
+
+
+#send{
+	width:310px;
+	height: 40px;
+	/*display: inline-block;*/
+	border:hidden;
+	color: white;
+	font-size: 20px;
+	text-align: center;
+	margin: 0px auto;
+	background-color: orange;
+}
+
+
+
+#otherway{
+	width:310px;
+	height:30px;
+	text-align:center;
+	color: white;
+}
+.tishi{
+	margin-bottom: 15px;
+}
+.otherchoice img{
+	width: 30px;
+	height: auto;
+}

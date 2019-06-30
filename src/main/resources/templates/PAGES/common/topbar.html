@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="common" >
+    <div class="nav">
+        <ul>
+            <li id="home_page">
+            </li>
+            <li class="mainmenu">
+                <a class="link" href="/queryAM">首页</a>
+            </li>
+<!--            <li class="mainmenu">-->
+<!--                <a class="link" href="">新闻</a>-->
+<!--                <dl>-->
+<!--                    <dd> <a href="/queryAM">寻主</a></dd>-->
+<!--                    <dd> <a href="/queryAM">寻宠</a></dd>-->
+<!--                </dl>-->
+<!--            </li>-->
+            <li class="mainmenu">
+                <a class="link" href="">百科</a>
+            </li>
+            <li class="mainmenu">
+                <a class="link" href="/shelterCommon">救助机构</a>
+            </li>
+            <li class="mainmenu">
+                <a class="link" href="">我们在行动</a>
+                <dl>
+                    <dd> <a href="/toDonation">捐款</a></dd>
+                    <dd> <a href="">志愿活动</a></dd>
+                    <dd> <a href="">关于我们</a></dd>
+                </dl>
+            </li>
+            <li class="mainmenu">
+                <a class="link" href="">用户中心</a>
+                <dl>
+                    <dd> <a href="/toDonation">我的领养</a></dd>
+                    <dd> <a href="/manage" th:if="${session.perm == 0}" >进入管理</a></dd>
+                    <dd> <a href="/logout">退出登录</a></dd>
+                </dl>
+            </li>
+        </ul>
+    </div>
+</div>
+</html>

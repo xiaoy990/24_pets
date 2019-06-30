@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../CSS/index.css">
+    <!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+    <script src="../JS/vue.js"></script>
+
+</head>
+<body>
+<span th:replace="PAGES/common/topbar :: common"></span>
+<div class="mainbox">
+    <div id="show1">
+        <div class="root">
+
+            <input class="root1" v-model="content" name="wd" placeholder="请输入想要搜索的内容">
+
+            <button id="button1">
+                搜索
+            </button>
+        </div>
+        <br><br>
+
+
+        <div >
+            <table style="table-layout:fixed;" >
+                <tr th:each="list,listStat:${list}">
+                    <td ><img th:src="${list.img}" style="float: left;width: 150px;height: 100px;"></td>
+                    <td th:text="${list.name}" style="width:130px;padding-left: 10px;word-wrap:break-word;word-break:break-all;"></td>
+                    <td th:text="${list.introduction}" style="width:290px;padding-right:10px;padding-left: 10px;word-wrap:break-word;word-break:break-all;"></td>
+                    <td th:text="${list.telephone}" style="width:250px;word-wrap:break-word;word-break:break-all;"></td>
+                    <td th:each="button,bState:${buttons}"><a href="" th:href="${button.href}+${list.id}"><button th:text="${button.value}"></button></a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

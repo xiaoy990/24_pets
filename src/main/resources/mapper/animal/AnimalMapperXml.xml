@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nenu.ossas.mapper.animal.AnimalMapper">
+    <resultMap type="com.nenu.ossas.entity.animal.Animal" id="AnimalMapper">
+        <result property="id" jdbcType="INTEGER" column="id"/>
+        <result property="name" jdbcType="VARCHAR" column="name"/>
+        <result property="sex" jdbcType="VARCHAR" column="sex"/>
+        <result property="age" jdbcType="INTEGER" column="age"/>
+        <result property="breed" jdbcType="VARCHAR" column="breed"/>
+        <result property="color" jdbcType="VARCHAR" column="color"/>
+        <result property="img" jdbcType="VARCHAR" column="img"/>
+        <result property="introduction" jdbcType="VARCHAR" column="introduction"/>
+        <result property="lostPlace" jdbcType="VARCHAR" column="lostPlace"/>
+        <result property="telephone" jdbcType="BIGINT" column="telephone"/>
+    </resultMap>
+
+    <!--遍历动物信息-->
+    <select id="listAll" resultMap="AnimalMapper">
+        SELECT `name`,`sex`,`age`,`breed`,`color`,`img`,
+        `introduction`,`lostPlace`,`telephone` FROM t_animal
+    </select>
+
+    <!--增加动物信息-->
+    <insert id="addAnimal">
+        INSERT INTO t_animal(name,sex,age,breed,color,img,introduction,lostPlace,telephone)
+        VALUES (#{animal.name},#{animal.sex},#{animal.age},#{animal.breed},
+        #{animal.color},#{animal.img},#{animal.introduction},#{animal.lostPlace},
+        #{animal.telephone})
+    </insert>
+
+    <!--删除动物信息-->
+    <delete id="delAnimal">
+        DELETE FROM t_animal
+        WHERE id = #{animal.id}
+    </delete>
+
+    <!--更新动物信息-->
+    <update id="updateAnimal">
+        UPDATE t_animal
+        SET `name` = #{animal.name},
+        `sex` = #{animal.sex},
+        `age` = #{animal.age},
+        `breed` = #{animal.breed},
+        `color` = #{animal.color},
+        `img` = #{animal.img},
+        `introduction` =#{animal.introduction},
+        `lostPlace` = #{animal.lostPlace},
+        `telephone` = #{animal.telephone},
+        `status` = #{animal.status},
+        `owner` = #{animal.owner}
+        where id = #{animal.id}
+    </update>
+
+    <!--根据关键字查询动物信息-->
+    <select id="selectByKeyword" resultType="com.nenu.ossas.entity.animal.Animal">
+        SELECT * FROM t_animal
+        WHERE  `name` LIKE concat('%',#{keyWord},'%')
+        OR `sex` LIKE concat('%',#{keyWord},'%')
+        OR `age` LIKE concat('%',#{keyWord},'%')
+        OR `breed` LIKE concat('%',#{keyWord},'%')
+        OR `color` LIKE concat('%',#{keyWord},'%')
+        OR `introduction` LIKE concat('%',#{keyWord},'%')
+        OR `lostPlace` LIKE concat('%',#{keyWord},'%')
+        OR `telephone` LIKE concat('%',#{keyWord},'%')
+    </select>
+
+    <select id="selectById"  resultType="com.nenu.ossas.entity.animal.Animal">
+        SELECT * FROM t_animal
+        WHERE id = #{id}
+    </select>
+</mapper>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="UTF-8">
+		<name></name>
+		<link rel="stylesheet" type="text/css" href="CSS/index.css">
+		<link rel="stylesheet" type="text/css" href="CSS/res_station.css">
+		<script src="JS/vue.js"></script>
+		
+		
+	    <!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->  
+	</head>
+	<body>
+	<span th:replace="PAGES/common/topbar :: common"></span>
+		<div class="mainbox">
+			<div id="left" class="neirong">
+				<h2>去救助站</h2><br />
+				<h3>这里汇集了在本站注册并经过审核的流浪动物救助站，您可以在这里领养一只或几只属于您的小可爱</h3><br />
+				<a href="/shelter"><div class="skip">点击模块以进入</div></a>
+			</div>
+			<div id="right" class="neirong">
+				<h2>去宠物诊所</h2><br />
+				<h3>这里提供了具备资质的宠物诊所，为您提供优质的宠物服务。您可以在这里办理寄养、预约等业务</h3><br />
+				<a href="/petClinic"><div class="skip">点击模块以进入</div></a>
+				
+			</div>
+		</div>
+		
+	</body>
+</html>

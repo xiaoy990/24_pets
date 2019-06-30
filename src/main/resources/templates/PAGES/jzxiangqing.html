@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="UTF-8">
+		<name></name>
+	    <link rel="stylesheet" type="text/css" href="CSS/index.css">
+	</head>
+	<body>
+	<span th:replace="PAGES/common/topbar :: common"></span>
+		<div class="mainbox">
+			<div class="top">
+				<div class="name" >
+					<h1 th:text="${type}"></h1>
+				</div>
+				
+				<div class="inf"  >
+					<h3>救助站联系方式及地址</h3>
+				</div>
+				
+			    <div class="telephone" >
+						<h3>救助站详细信息</h3>
+					</div>
+			</div>
+			<br><br>
+			<table>
+				<tr th:each="list,listStat:${list}">
+					<div class="cont">
+						<td>
+							<div class="pic1" > <img src="IMG/original/1.jpg" height="120" width="180"></div>
+						</td>
+
+						<td th:text="${list.name}"></td>
+
+						<td th:text="${list.introduction}">
+
+						</td>
+
+						<td>
+							<div class="click" >
+								<button id="button1">领养</button>
+							</div>
+						</td>
+					</div>
+				</tr>
+			</table>
+			<br><br>
+			
+			
+			
+
+			
+			
+
+		</div>
+
+				
+					<script>							
+							</script>
+		
+	</body>
+</html>

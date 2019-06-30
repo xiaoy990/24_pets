@@ -1,0 +1,254 @@
+@charset "utf-8";
+*{
+	padding: 0;
+	margin: 0;
+}
+/* 导航栏 */
+.nav{
+	height:50px;
+	width: 100%;
+	background-color: #eb7e17;
+	margin: 0 auto;
+}
+.home_page{
+	padding-left: 270px;
+}
+.nav li{
+	float:left;
+	text-align: center;
+	height:50px;
+	width:200px;
+	line-height:50px;
+	font-size:16px;
+	position:relative;
+	list-style-type: none;
+}
+.nav li a{
+	color:#FFF;
+	display:block;
+	padding: 0 21.5px;
+	text-decoration: none;
+}
+.nav ul li a:hover{
+	display:block;
+	color: #fff;
+	background:#7e8488;
+}
+.nav dl{
+	font-size:14px;
+	background:grey;
+	position:absolute;
+	top:50px;
+	left:0px;
+	z-index: 9999;
+	width: 100%;
+}
+.nav dl dd a{
+	color:#fff; 
+	padding: 8px 0; 
+	line-height: 22px;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+}
+.nav dl dd a:hover{
+	color:#fff;
+	background:rgb(209, 123, 10);
+}
+.mainmenu{
+	overflow: hidden;
+}
+.mainmenu:hover{
+	overflow: visible;
+	z-index: 1;
+}
+/*内容部分*/
+.mainbox{
+	width: 100%;
+	height: 1000px;
+	background-image: url('../IMG/background.jpg') ;
+	background-repeat:no-repeat; 
+	/*background-size:100% 100%;*/
+	position: relative;
+	background-size: cover;
+}
+/* 搜索框 */
+.root{
+	text-align: center;
+	padding-top: 50px;
+	margin-bottom: 30px;
+/* 输入框 */
+}
+.root1{
+	height: 40px;
+	width: 300px;
+	margin-right: 50px;
+	padding-left: 15px;
+	}
+/*背景弱虚化*/
+.mainbox1{
+	width: 100%;
+	height: 800px;
+	background-image: url('../IMG/background5.jpg') ;
+	background-repeat:no-repeat; 
+	/*background-size:100% 100%;*/
+	position: relative;
+	background-size: cover;
+}
+/*背景强虚化*/
+.mainbox2{
+	width: 100%;
+	height: 800px;
+	background-image: url('../IMG/background6.jpg') ;
+	background-repeat:no-repeat; 
+	/*background-size:100% 100%;*/
+	position: relative;
+	background-size: cover;
+}
+.content1{
+	width:300px;
+	height: 500px;
+	position: absolute;
+	top:170px;
+	left: 150px;
+	
+}
+#logselect{
+	position: absolute;
+	top:220px;
+	left: 10px;
+	/*padding: 0 auto;*/
+}
+button{
+	width:110px;
+	height: 40px;
+	border-radius: 3px;
+	color: white;
+	background-color: #eb7e17;
+	border: hidden;
+	margin-right: 10px;
+	cursor: pointer;
+}
+button:hover{
+	background-color: white;
+	color: #eb7e17;
+}
+#button1{
+	width:110px;
+	height: 40px;
+	border-radius: 3px;
+	color: white;
+	background-color: #eb7e17;
+	border: hidden;
+	margin-right: 10px;
+	cursor: pointer;
+}
+#button1:hover{
+	background-color: white;
+	color: #eb7e17;
+}
+
+	.top{
+		padding-left: 350px;
+		height:140px;
+	    width: 1000px;
+		display: flex;
+		align-items: center;
+	}
+	.top > h3:nth-child(2) {
+		padding-left: 20px;
+		height: 100px;
+		width: 400px;
+	   }
+	   .top > h3:nth-child(3) {
+		padding-left: 20px;
+		height: 100px;
+		width: 400px;
+	   }
+	   .top > h1:nth-child(1) {
+		height: 100px;
+		width: 300px;
+	   }
+	   .inf > h3:nth-child(1) {
+		margin-left: 20px;
+	   }
+	   .tel > h3:nth-child(1) {
+		margin-left: 20px;
+	   }
+	.name，
+	.tel{
+	height:100px;
+	width: 400px;
+	}
+	.cont{
+		padding-left: 300px;
+		height:100px;
+	    width: 1200px;
+		display: flex;
+		align-items: center;
+	}
+	.click,	  
+	.inf1{
+		width: 100%;
+		height: auto;
+		word-wrap:break-word;
+		word-break:break-all;
+		overflow: hidden;
+		padding-left: 40px;
+	}
+/* Close button */
+.action {
+	font-size: 1.5em;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+	vertical-align: top;
+	color: #ffffff;
+	border: none;
+	background: none;
+}
+.action:hover,
+.action:focus {
+	color: #000000;
+	outline: none;
+}
+
+.action--close {
+	position: fixed;
+	z-index: 150;
+	top: 0;
+	right: 0;
+	opacity: 0;
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+	-webkit-transform: scale3d(0.6, 0.6, 1);
+	transform: scale3d(0.6, 0.6, 1);
+}
+.preview--image-loaded .action--close {
+	opacity: 10;
+	-webkit-transform: scale3d(1, 1, 1);
+	transform: scale3d(1, 1, 1);
+}
+.mainbox > table:nth-child(4) {
+	margin-left: 300px;
+}
+input{
+	border-radius: 3px;
+	/*color: white;*/
+	background-color: white;
+	border: 1px solid darkgray;
+	padding-left: 10px;
+	margin-top:50px;
+	/*cursor: pointer;*/
+	margin-left: 400px;
+	height: 40px;
+	width: 300px;
+	margin-right: 50px;
+	padding-left: 15px;
+}
+#show1 > div:nth-child(4) {
+	margin-left: 220px;
+}
+
+	
+	

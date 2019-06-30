@@ -1,0 +1,43 @@
+spring:
+  profiles:
+    active: dev
+#  mvc:
+#    static-path-pattern: /file/**
+#  resources:
+#    static-locations: file:D:/appData/IdeaProjects/pets/target/classes/upload
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost/db_pets?autoReconnect=true&useSSL=false&serverTimezone=GMT&characterEncoding=utf-8
+    username: root
+    password: mysql
+  # jpa自动建表
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    open-in-view: true
+#  servlet:
+#    multipart:
+#      location: D:/appData/IdeaProjects/pets/target/classes/upload/
+server:
+  port: 8080
+
+mybatis:
+  type-aliases-package: com.rdbr.entity
+  mapper-locations: classpath:mapper/*/*.xml
+
+---
+spring:
+  profiles: prod
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.103.10.220/db_pets?autoReconnect=true&useSSL=false&serverTimezone=GMT&characterEncoding=utf-8
+    username: root
+    password: Join666
+  mvc:
+    static-path-pattern: /file/**
+  resources:
+    static-locations: file:/usr/java/webapps/xiaoyao/upload
+

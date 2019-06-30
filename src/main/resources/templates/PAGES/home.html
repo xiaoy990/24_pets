@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta charset="UTF-8">
+	<name></name>
+	<link rel="stylesheet" type="text/css" href="CSS/index.css">
+	<!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+	<script src="JS/vue.js"></script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Effect inspiration for opening an image grid item." />
+	<meta name="keywords" content="image grid, effect, inspiration, css, javascript, animation, masonry" />
+	<meta name="author" content="Codrops" />
+	<link rel="stylesheet" type="text/css" href="CSS/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="FONTS/font-awesome-4.3.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="/CSS/demo.css" />
+
+	<!--必要样式-->
+	<link rel="stylesheet" type="text/css" href="CSS/style1.css" />
+	<script src="JS/modernizr-custom.js"></script>
+</head>
+
+<body >
+<span th:replace="PAGES/common/topbar :: common"></span>
+<div class="mainbox">
+	<div class="container">
+
+		<div class="root">
+
+			<input class="root1" v-model="content" name="wd" placeholder="请输入想要搜索的内容">
+
+			<button id="button1">
+				搜索
+			</button>
+		</div>
+		<div class="pbl">
+			<div class="grid">
+				<div th:each="list,listStats:${list}" class="grid__item" data-size="1280x853">
+					<a href="IMG/original/1.jpg" class="img-wrap"><img th:src="${list.img}" alt="img01" />
+						<div class="description description--grid">详细信息</div>
+					</a>
+					<div class="description description--grid">
+						<h4>详细信息</h4>
+						<a href="/lingyang">我要领养</a>
+					</div>
+					<div class="information"><p th:text="${list.name}+${list.breed}+${list.telephone}">品种+地址+联系方式</p></div>
+				</div>
+<!--				<div class="grid__item" data-size="958x1280">-->
+<!--					<a href="IMG/original/2.jpg" class="img-wrap"><img src="IMG/thumbs/2.jpg" alt="img01" />-->
+<!--						<div class="description description&#45;&#45;grid">详细信息</div>-->
+<!--					</a>-->
+<!--					<div class="information"><p>品种+地址+联系方式</p></div>-->
+<!--				</div>-->
+<!--				<div class="grid__item" data-size="837x1280">-->
+<!--					<a href="//IMG/original/3.jpg" class="img-wrap"><img src="IMG/thumbs/3.jpg" alt="img01" />-->
+<!--						<div class="description description&#45;&#45;grid">详细信息</div>-->
+<!--					</a>-->
+<!--					<div class="information"><p>品种+地址+联系方式</p></div>-->
+<!--				</div>-->
+<!--				<div class="grid__item" data-size="1280x961">-->
+<!--					<a href="//IMG/original/4.jpg" class="img-wrap"><img src="IMG/thumbs/4.jpg" alt="img01" />-->
+<!--						<div class="description description&#45;&#45;grid">详细信息</div>-->
+<!--					</a>-->
+<!--					<div class="information"><p>品种+地址+联系方式</p></div>-->
+<!--				</div>-->
+<!--				<div class="grid__item" data-size="1280x1131">-->
+<!--					<a href="//IMG/original/5.jpg" class="img-wrap"><img src="IMG/thumbs/5.jpg" alt="img01" />-->
+<!--						<div class="description description&#45;&#45;grid">详细信息</div>-->
+<!--					</a>-->
+<!--					<div class="information"><p>品种+地址+联系方式</p></div>-->
+<!--				</div>-->
+<!--				<div class="grid__item" data-size="1280x857">-->
+<!--					<a href="//IMG/original/6.jpg" class="img-wrap"><img src="IMG/thumbs/6.jpg" alt="img01" />-->
+<!--						<div class="description description&#45;&#45;grid">详细信息</div>-->
+<!--					</a>-->
+<!--					<div class="information"><p>品种+地址+联系方式</p></div>-->
+<!--				</div>-->
+<!--				<div class="grid__item" data-size="1280x1280">-->
+<!--					<a href="../IMG/original/7.jpg" class="img-wrap"><img src="IMG/thumbs/7.jpg" alt="img01" />-->
+<!--						<div class="description description&#45;&#45;grid">详细信息</div>-->
+<!--					</a>-->
+<!--					<div class="information"><p>品种+地址+联系方式</p></div>-->
+<!--				</div>-->
+<!--				<div class="grid__item" data-size="1280x853">-->
+<!--					<a href="../IMG/original/8.jpg" class="img-wrap"><img src="IMG/thumbs/8.jpg" alt="img08" />-->
+
+<!--						<div class="description description&#45;&#45;grid">详细信息</div>-->
+<!--					</a>-->
+<!--					<div class="information"><p>品种+地址+联系方式</p></div>-->
+<!--				</div>-->
+<!--				<div class="grid__item" data-size="865x1280">-->
+<!--					<a href="../IMG/original/9.jpg" class="img-wrap"><img src="IMG/thumbs/9.jpg" alt="img09" />-->
+
+<!--						<div class="description description&#45;&#45;grid">详细信息</div>-->
+<!--					</a>-->
+<!--					<div class="information"><p>品种+地址+联系方式</p></div>-->
+<!--				</div>-->
+<!--				<div class="grid__item" data-size="1280x1280">-->
+<!--					<a href="../IMG/original/10.jpg" class="img-wrap"><img src="IMG/thumbs/10.jpg" alt="img10" />-->
+
+<!--						<div class="description description&#45;&#45;grid">详细信息</div>-->
+<!--					</a>-->
+<!--					<div class="information"><p>品种+地址+联系方式</p></div>-->
+<!--				</div>-->
+<!--				<div class="grid__item" data-size="1280x850">-->
+<!--					<a href="../IMG/original/11.jpg" class="img-wrap">-->
+<!--						<img src="../IMG/thumbs/11.jpg" alt="img11" />-->
+
+<!--						<div class="description description&#45;&#45;grid">详细信息</div>-->
+<!--					</a>-->
+<!--					<div class="information"><p>品种+地址+联系方式</p></div>-->
+<!--				</div>-->
+
+			</div>
+			<!-- /grid -->
+			<div class="preview">
+				<button class="action action--close">关闭</span></button>
+				<div class="description description--preview"></div>
+			</div>
+			<!-- /preview -->
+		</div>
+		<!-- /content -->
+	</div>
+</div>
+
+
+
+
+<script type="text/javascript" src="JS/imagesloaded.pkgd.min.js"></script>
+<script type="text/javascript" src="JS/masonry.pkgd.min.js"></script>
+<script type="text/javascript" src="JS/classie.js"></script>
+<script type="text/javascript" src="JS/main.js"></script>
+<script type="text/javascript">
+	(function () {
+		// create SVG circle overlay and append it to the preview element
+		function createCircleOverlay(previewEl) {
+			var dummy = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+			dummy.setAttributeNS(null, 'version', '1.1');
+			dummy.setAttributeNS(null, 'width', '100%');
+			dummy.setAttributeNS(null, 'height', '100%');
+			dummy.setAttributeNS(null, 'class', 'overlay');
+			var g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+			var circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+			circle.setAttributeNS(null, 'cx', 0);
+			circle.setAttributeNS(null, 'cy', 0);
+			circle.setAttributeNS(null, 'r', Math.sqrt(Math.pow(previewEl.offsetWidth, 2) + Math.pow(previewEl.offsetHeight, 2)));
+			dummy.appendChild(g);
+			g.appendChild(circle);
+			previewEl.appendChild(dummy);
+		}
+
+		new GridFx(document.querySelector('.grid'), {
+			onInit: function (instance) {
+				createCircleOverlay(instance.previewEl);
+			},
+			onResize: function (instance) {
+				instance.previewEl.querySelector('svg circle').setAttributeNS(null, 'r', Math.sqrt(Math.pow(instance.previewEl.offsetWidth, 2) + Math.pow(instance.previewEl.offsetHeight, 2)));
+			},
+			onOpenItem: function (instance, item) {
+				// item's image
+				var gridImg = item.querySelector('img'),
+						gridImgOffset = gridImg.getBoundingClientRect(),
+						win = {
+							width: document.documentElement.clientWidth,
+							height: window.innerHeight
+						},
+						SVGCircleGroupEl = instance.previewEl.querySelector('svg > g'),
+						SVGCircleEl = SVGCircleGroupEl.querySelector('circle');
+
+				SVGCircleEl.setAttributeNS(null, 'r', Math.sqrt(Math.pow(instance.previewEl.offsetWidth, 2) + Math.pow(instance.previewEl.offsetHeight, 2)));
+				// set the transform for the SVG g node. This will animate the circle overlay. The origin of the circle depends on the position of the clicked item.
+				if (gridImgOffset.left + gridImg.offsetWidth / 2 < win.width / 2) {
+					SVGCircleGroupEl.setAttributeNS(null, 'transform', 'translate(' + win.width + ', ' + (gridImgOffset.top + gridImg.offsetHeight / 2 < win.height / 2 ? win.height : 0) + ')');
+				} else {
+					SVGCircleGroupEl.setAttributeNS(null, 'transform', 'translate(0, ' + (gridImgOffset.top + gridImg.offsetHeight / 2 < win.height / 2 ? win.height : 0) + ')');
+				}
+			}
+		});
+	})();
+</script>
+
+
+</body>
+
+</html>

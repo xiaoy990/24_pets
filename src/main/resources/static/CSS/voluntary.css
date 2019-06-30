@@ -1,0 +1,42 @@
+@charset "utf-8";
+*{
+	padding: 0;
+	margin: 0;
+}
+.mainbox2{
+	padding: 40px 150px;
+}
+.activity{
+	width: 520px;
+	height: 270px;
+	background-color: white;
+	/*margin: 40px ;*/
+	float: left;
+	margin-bottom: 30px;
+	margin-right: 60px;
+}
+.actiontitle{
+	width: 400px;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 30px;
+	padding-top: 20px;
+}
+.img{
+	display: inline-block;
+	width: 200px;
+	height:200px;
+	display:flex;
+	/*margin:40px ;*/
+	align-items:center; 
+	justify-content:center;
+	float:left;
+	/*margin-right: 20px;*/
+}
+.text{
+	display: inline-block;
+	width: 300px;
+	height:200px;
+	float:left;
+	
+}

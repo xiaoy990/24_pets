@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="UTF-8">
+		<name></name>
+		<link rel="stylesheet" type="text/css" href="CSS/index.css">
+		<link rel="stylesheet" type="text/css" href="CSS/donation.css">
+	    
+	</head>
+	<body>
+		<span th:replace="PAGES/common/topbar :: common"></span>
+		<div class="mainbox1">
+			<div id="content1">
+				<div id="container">
+	       			<ul class="pic">
+	            		<li><a href="javascript:;"><img src="IMG/one.jpg" alt="pic2"></a></li>
+	            		<li><a href="javascript:;"><img src="IMG/two.jpg" alt="pic3"></a></li>
+	            		<li><a href="javascript:;"><img src="IMG/three.jpg" alt="pic4"></a></li>
+	            		<li><a href="javascript:;"><img src="IMG/four.jpg" alt="pic4"></a></li>
+	            		
+	        		</ul>
+    			</div>
+			</div>
+			<div id="content2">
+				<div id="row1" class="show"><span>当前收到捐款总额（元）：</<span></div>
+				<div id="row2" class="show"><span th:text="${donation.get(0).total}">0000000000</span></div>
+			</div>
+			<div id="content3">
+				<a href=""><button type="button" class="tiaozhuan">了解相关的承诺</button></a>
+				<a href=""><button type="button" class="tiaozhuan">我要帮助它们</button></a>
+			</div>
+			<div id="content4">
+				<div id="name">
+					<h1>相关情况说明</h1>
+				</div>
+				<div id="middle">
+					<p>
+						1. 如果仅需要款项流水信息，请记住转账时的账单号并致电：010-0000000。<br />    
+						2.该平台目前仅接受人民币捐款。<br />                           
+						3.您的捐款善举，我们将定期在网站首页上向社会公示，以示褒奖。若您不便公开实名，我们将以“爱心人士”名义进行公示。<br />                                  
+						4.如您在捐款过程中遇到任何问题请致电：    010-0000000。   <br />                                                      
+						5.接待时间：                                                          <br /> 
+						周一至周五(国定节假日除外)，9:00-17:00   <br />        
+					</p>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>
